@@ -1,3 +1,6 @@
 /wallpaper_backup/
 /__pycache__
 /wallpaper/__pycache__
+/build
+/dist
+/wallpaper.spec

@@ -1,5 +1,3 @@
 pystray
 Pillow
-pythoncom
-win32gui
 pywin32

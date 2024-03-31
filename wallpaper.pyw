@@ -143,8 +143,8 @@ def main():
             change_wallpaper_with_fade(current_running_wallpaper)
             print("Changed wallpaper")
         
-        print("Current Hour: " + str(current_hour))
-        time.sleep(5)
+        print("Current Hour: " + str(current_hour), end="\r")
+        time.sleep(1)
 
 
 atexit.register(exit_function)

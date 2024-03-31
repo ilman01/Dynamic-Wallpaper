@@ -8,6 +8,7 @@ from PIL import Image
 from pystray import MenuItem as item
 import threading
 import os
+import sys
 from datetime import datetime
 import shutil
 
@@ -16,6 +17,11 @@ import pythoncom
 import win32gui
 from win32com.shell import shell, shellcon
 from typing import List
+
+
+
+sys.path.insert(0, os.path.abspath('./wallpaper/'))
+import schedule
 
 
 
@@ -118,24 +124,7 @@ def main():
 
         # find free wallpapers here: https://windd.info/themes/free.html
 
-        if current_hour == 5:
-            current_running_wallpaper = r"./firewatch/firewatch_1.jpg"
-        if current_hour == 6:
-            current_running_wallpaper = r"./firewatch/firewatch_2.jpg"
-        if 7 <= current_hour <= 8:
-            current_running_wallpaper = r"./firewatch/firewatch_3.jpg"
-        if 9 <= current_hour <= 14:
-            current_running_wallpaper = r"./firewatch/firewatch_4.jpg"
-        if 15 <= current_hour <= 16:
-            current_running_wallpaper = r"./firewatch/firewatch_5.jpg"
-        if current_hour == 17:
-            current_running_wallpaper = r"./firewatch/firewatch_6.jpg"
-        if current_hour == 18:
-            current_running_wallpaper = r"./firewatch/firewatch_7.jpg"
-        if 19 <= current_hour <= 23:
-            current_running_wallpaper = r"./firewatch/firewatch_8.jpg"
-        if 0 <= current_hour <= 4:
-            current_running_wallpaper = r"./firewatch/firewatch_8.jpg"
+        current_running_wallpaper = schedule.schedule()
 
         current_running_wallpaper = relative_to_absolute(current_running_wallpaper)
 
